@@ -63,37 +63,45 @@
       >
         &#183; 07 07 2024 &#183;
       </h3>
+
+      
     </div>
   </section>
 
-  <section class="couple">
+  <!-- <section class="couple">
     <div class="container">
       <app-card [header]="'COUPLE_CARD_TITLE' | translate" class="card">
-        <div class="couple-card-wrapper">
-          <div class="couple-card" appScrollAnimation animationClass="fadeInUp">
-            <h4 class="font-cursive-primary-2">Данияр</h4>
+        <div class="couple-card-wrapper column">
+          <div >
+            <img src="/assets/images/couple_img.png" alt="dd">
+         </div>
 
-            <a
-              href="https://www.instagram.com/kasenov.daniyar"
-              target="”_blank”"
-            >
-              <img src="/assets/icons/insta.svg" alt="circle" />
-            </a>
-          </div>
-
-          <div class="couple-card" appScrollAnimation animationClass="fadeInUp">
-            <h4 class="font-cursive-primary-2">Сания</h4>
-
-            <a href="https://www.instagram.com/s_tolegenkyzy" target="”_blank”">
-              <img src="/assets/icons/insta.svg" alt="circle" />
-            </a>
+          <div class="couple-card-wrapper">
+            <div class="couple-card" appScrollAnimation animationClass="fadeInUp">
+              <h4 class="font-cursive-primary-2">Данияр</h4>
+  
+              <a
+                href="https://www.instagram.com/kasenov.daniyar"
+                target="”_blank”"
+              >
+                <img src="/assets/icons/insta.svg" alt="circle" />
+              </a>
+            </div>
+  
+            <div class="couple-card" appScrollAnimation animationClass="fadeInUp">
+              <h4 class="font-cursive-primary-2">Сания</h4>
+  
+              <a href="https://www.instagram.com/s_tolegenkyzy" target="”_blank”">
+                <img src="/assets/icons/insta.svg" alt="circle" />
+              </a>
+            </div>
           </div>
         </div>
       </app-card>
 
       <app-divider></app-divider>
     </div>
-  </section>
+  </section> -->
 
   <section class="invitation">
     <div class="container">
@@ -120,6 +128,13 @@
       >
         {{ "INVITATION_SUBTITLE_2" | translate }}
       </h4>
+
+      <h4
+      class="font-body-1-regular-secondary invitation_subtitle"
+      appScrollAnimation
+      animationClass="fadeInUp"
+    >{{ "INVITATION_SUBTITLE_3" | translate }} 
+    </h4>
 
       <h4
         class="font-heading-3-light-secondary-2 invitation_subtitle date"
@@ -214,6 +229,15 @@
           {{ "CEREMONY_LOCATION" | translate }}
         </h5>
 
+        <h5
+          class="font-body-1-bold-white"
+          appScrollAnimation
+          animationClass="fadeInUp"
+        >
+        {{ "CEREMONY_OWNER" | translate }}
+        </h5>
+
+
         <app-button
           [fullWidth]="true"
           [label]="'VIEW_MAP' | translate"
@@ -277,13 +301,13 @@
     <div class="footer-wrapper">
       <div class="content" appScrollAnimation animationClass="fadeInUp">
         <h5 class="font-heading-5-regular-white">
-          Құрметті қонактар,
-          <span class="font-heading-5-bold">той фоталарын</span> томендегі
-          каналдан ала аласыздар
+          {{ "TG_TITLE" | translate }}
+         
         </h5>
 
         <app-button
           (clicked)="goToTg()"
+          [label]="'TG_BUTTON' | translate"
           icon="telegram"
           label="Каналға өту"
           style="width: fit-content"

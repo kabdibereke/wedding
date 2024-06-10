@@ -91,6 +91,6 @@ export class TableComponent {
     }
     const wb: XLSX.WorkBook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
-    XLSX.writeFile(wb, 'Гости-хуести.xlsx');
+    XLSX.writeFile(wb, 'Гости.xlsx');
   }
 }
