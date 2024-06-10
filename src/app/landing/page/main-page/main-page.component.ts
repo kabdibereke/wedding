@@ -131,54 +131,57 @@ export class MainPageComponent implements OnInit {
       return;
     }
     this.loading = true;
+    
+    setTimeout(()=> {
+      const formValue = (this.form.controls.name.value as string).split(',');
 
-    const formValue = (this.form.controls.name.value as string).split(',');
-
-    if (formValue.length == 1) {
-      const request = {
-        id: uuidv7(),
-        name: this.form.controls.name.value,
-        wishes: this.form.controls.wishes.value,
-        isComing:
-          this.selectedOption === 'Әрине, келемін' || 'Да, конечно'
-            ? true
-            : false,
-      };
-
-      this._guestService
-        .addGuest(request as unknown as GuestType)
-        .subscribe(() => {
-          this.loading = false;
-          this.form.reset();
-          this._toastr.error(this.formSuccessText, '', {
-            timeOut: 3000,
-          });
-        });
-    }
-
-    if (formValue.length > 1) {
-      const mappedValue = formValue.map((value) => {
-        return {
+      if (formValue.length == 1) {
+       
+        const request = {
           id: uuidv7(),
-          name: value.trim(),
+          name: this.form.controls.name.value,
           wishes: this.form.controls.wishes.value,
           isComing:
-            this.selectedOption === 'Әрине, келемін' || 'Да, конечно'
+            this.selectedOption === 'Иә' || this.selectedOption ===  'Да'
               ? true
               : false,
         };
-      });
-
-      this._guestService
-        .addGuestList(mappedValue as unknown as GuestType[])
-        .subscribe(() => {
-          this.loading = false;
-          this.form.reset();
-          this._toastr.error(this.formSuccessText, '', {
-            timeOut: 3000,
+  
+        this._guestService
+          .addGuest(request as unknown as GuestType)
+          .subscribe(() => {
+            this.loading = false;
+            this.form.reset();
+            this._toastr.error(this.formSuccessText, '', {
+              timeOut: 3000,
+            });
           });
+      }
+  
+      if (formValue.length > 1) {
+        const mappedValue = formValue.map((value) => {
+          return {
+            id: uuidv7(),
+            name: value.trim(),
+            wishes: this.form.controls.wishes.value,
+            isComing:
+            this.selectedOption === 'Иә' || this.selectedOption ===  'Да'
+            ? true
+            : false,
+          };
         });
-    }
+  
+        this._guestService
+          .addGuestList(mappedValue as unknown as GuestType[])
+          .subscribe(() => {
+            this.loading = false;
+            this.form.reset();
+            this._toastr.error(this.formSuccessText, '', {
+              timeOut: 3000,
+            });
+          });
+      }
+    },100)
   }
 
   public play() {
