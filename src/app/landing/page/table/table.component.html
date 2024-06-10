@@ -3,7 +3,7 @@
     <thead>
       <tr>
         <th *ngFor="let column of columns">{{ column }}</th>
-        
+        <th>удалить</th>
       </tr>
     </thead>
     <tbody>
@@ -14,7 +14,9 @@
         <td [class.isComing]="row.isComing" [class.notComing]="!row.isComing">
           {{ row.isComing ? "Да" : "Нет" }}
         </td>
-       
+        <td>
+          <span (click)="deleteGuest(row.id)" class="delete">удалить</span>
+        </td>
       </tr>
     </tbody>
   </table>
