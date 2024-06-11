@@ -13,4 +13,9 @@ export const routes: Routes = [
     component: TableComponent,
     pathMatch: 'full',
   },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full',
+  }
 ];
