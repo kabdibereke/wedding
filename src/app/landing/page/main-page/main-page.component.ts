@@ -143,7 +143,7 @@ export class MainPageComponent implements OnInit {
           name: this.form.controls.name.value,
           wishes: this.form.controls.wishes.value,
           isComing:
-            this.selectedOption === 'Иә' || this.selectedOption ===  'Да' ||  this.selectedOption ===  undefined
+            this.selectedOption === 'Иә' || this.selectedOption ===  'Да' 
               ? true
               : false,
         };
@@ -166,7 +166,7 @@ export class MainPageComponent implements OnInit {
             name: value.trim(),
             wishes: this.form.controls.wishes.value,
             isComing:
-            this.selectedOption === 'Иә' || this.selectedOption ===  'Да' ||  this.selectedOption ===  undefined
+            this.selectedOption === 'Иә' || this.selectedOption ===  'Да' 
             ? true
             : false,
           };
