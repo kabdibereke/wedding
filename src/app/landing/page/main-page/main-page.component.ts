@@ -68,6 +68,7 @@ export class MainPageComponent implements OnInit {
 
     this._translate.get('YES').subscribe((yesTranslation: string) => {
       this.yesTranslation = yesTranslation;
+      this.selectedOption = yesTranslation
     });
 
     this._translate.get('NO').subscribe((noTranslation: string) => {
