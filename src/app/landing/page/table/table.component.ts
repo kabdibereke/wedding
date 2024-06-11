@@ -34,13 +34,13 @@ export class TableComponent {
   }
 
   public deleteGuest(id: string): void {
-    let result = confirm('Удалить элемент?')
+    let result = confirm('Удалить элемент?');
     if(result) {
          this._guestService
       .deleteGuest(id)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({});
-    }
+    };
  
   }
 
