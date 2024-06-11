@@ -136,13 +136,13 @@ export class MainPageComponent implements OnInit {
       const formValue = (this.form.controls.name.value as string).split(',');
 
       if (formValue.length == 1) {
-       
+         console.log(this.selectedOption)
         const request = {
           id: uuidv7(),
           name: this.form.controls.name.value,
           wishes: this.form.controls.wishes.value,
           isComing:
-            this.selectedOption === 'Иә' || this.selectedOption ===  'Да'
+            this.selectedOption === 'Иә' || this.selectedOption ===  'Да' ||  this.selectedOption ===  undefined
               ? true
               : false,
         };
@@ -165,7 +165,7 @@ export class MainPageComponent implements OnInit {
             name: value.trim(),
             wishes: this.form.controls.wishes.value,
             isComing:
-            this.selectedOption === 'Иә' || this.selectedOption ===  'Да'
+            this.selectedOption === 'Иә' || this.selectedOption ===  'Да' ||  this.selectedOption ===  undefined
             ? true
             : false,
           };
